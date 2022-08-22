@@ -42,7 +42,8 @@ function getRandomBackgroundColor() {
 }
 
 // I want each avatar on the mockup to be randomized **but** I want
-// both avatars contained in the header to be identical.
+// both avatars contained in the header and the trending avatar of the
+// same user to be identical.
 
 !function addRandomAvatar() {
 	let avatars = document.querySelectorAll('.isRandomAvatar')
@@ -60,4 +61,8 @@ function getRandomBackgroundColor() {
 	let headerAvatar2 = document.querySelector('.header-greetings-user-avatar')
 			headerAvatar2.setAttribute('src', headerAvatar1Src)
 			headerAvatar2.style.backgroundColor = headerAvatar1BG
+			
+	let trendingAvatar = document.querySelector('.isSameAvatar')
+			trendingAvatar.setAttribute('src', headerAvatar1Src)
+			trendingAvatar.style.backgroundColor = headerAvatar1BG
 }()
