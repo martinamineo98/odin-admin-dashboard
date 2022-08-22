@@ -6,4 +6,4 @@ based on a mockup created by said [The Odin Project](https://www.theodinproject.
 <br>
 
 SVG Icons created by [Feather](https://feathericons.com).<br>
-Placeholder Avatars created by [Florian Körner](https://github.com/FlorianKoerner) and generated thanks to [Dicebear Avatars](https://avatars.dicebear.com/).
+Pixel Art Placeholder Avatars created by [Florian Körner](https://github.com/FlorianKoerner) and generated thanks to [Dicebear Avatars](https://avatars.dicebear.com/).
