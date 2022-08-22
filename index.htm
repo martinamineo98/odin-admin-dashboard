@@ -7,12 +7,43 @@
 		<link rel="stylesheet" href="./assets/css/style.css">
 	</head>
 	<body class="grid">
-		<header class="header grid-header"></header>
-		<div class="sidebar grid-sidebar"></div>
-		<main role="main" class="main grid-main">
+		<header class="header">
+			<div class="header-search">
+				<label for="search"><img alt="Search Svg Icon" src="./assets/img/feather/search.svg"></label>
+				<input type="text" id="search" name="search">
+			</div>
+			
+			<div class="header-user-block">
+				<a class="header-user-bell" href="#"><img alt="Bell Svg Icon" src="./assets/img/feather/bell.svg"></a>
+				<div class="header-user-sub-block">
+					<img class="header-user-avatar isRandomAvatar" alt="User Avatar">
+					<a class="header-user-name" href="#">Morgan Oakley</a>
+				</div>
+			</div>
+			
+			<div class="header-greetings">
+				<img class="header-greetings-user-avatar" alt="User Avatar">
+				<div class="header-greetings-user">
+					<span class="header-greetings-text">Hi there,</span>
+					<a class="header-greetings-user-name">Morgan Oakley (@morgan)</a>
+				</div>
+			</div>
+			
+			<div class="header-buttons">
+				<button type="submit">New</button>
+				<button type="submit">Upload</button>
+				<button type="submit">Share</button>
+			</div>
+		</header>
+		
+		<div class="sidebar"></div>
+		
+		<main role="main" class="main">
 			<div class="main-projects grid-projects"></div>
 			<div class="main-announcements grid-announcements"></div>
 			<div class="main-trending grid-trending"></div>
 		</main>
+		
+		<script src="./assets/js/randomAvatar.js"></script>
 	</body>
 </html>

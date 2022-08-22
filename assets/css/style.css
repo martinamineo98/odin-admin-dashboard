@@ -4,7 +4,12 @@
 /* -------------------------------------------------------- VARIABLES */
 
 :root {
-
+	--body-font-family: 'Barlow Semi Condensed', sans-serif;
+	--input-bg-color: hsl(200deg, 35%, 90%);
+	--button-submit-bg-color: hsl(200deg, 80%, 50%);
+	--header-bg-color: #FFFFFF;
+	--sidebar-bg-color: hsl(200deg, 80%, 50%);
+	--main-bg-color: hsl(200deg, 35%, 90%);
 }
 
 /* ------------------------------------------------------------ RESET */
@@ -23,6 +28,20 @@ body {
   font-size: 10px;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 500;
+}
+
+input,
+button {
+	font: inherit;
+}
+
 img,
 video {
   height: auto;
@@ -37,7 +56,35 @@ table {
 /* ------------------------------------------------------------- MAIN */
 
 body {
+	font: calc(1.6rem + .5vmin) var(--body-font-family);
+}
 
+input,
+button[type='submit'] {
+	border-radius: 30px;
+}
+
+:is(input, button, label):hover,
+:is(input, button, label):focus {
+	cursor: pointer;
+}
+
+input {
+	background-color: var(--input-bg-color, red);
+	padding: 1ch 2ch;
+}
+
+button[type='submit'] {
+	background-color: var(--button-submit-bg-color);
+	color: #FFFFFF;
+	font-weight: 500;
+	padding: 1ch 3ch;
+	transition: all .5s ease-in-out;
+}
+
+button[type='submit']:hover,
+button[type='submit']:focus {
+	transform: scale(1.125);
 }
 
 /* ------------------------------------------------------------- GRID */
@@ -46,27 +93,132 @@ body {
 	display: grid;
 	grid-template-columns: 1fr 3fr;
 	grid-template-rows: 1fr 3fr;
-	min-height: 100vh;
+	height: 100vh;
 }
 
-.grid-header {
+/* ----------------------------------------------------------- HEADER */
+
+.header {
+	background-color: var(--header-bg-color);
+	display: grid;
+	gap: 0;
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: repeat(2, 1fr);
 	grid-column: 2 / -1;
+	padding: 15px 30px;
 }
 
-.grid-sidebar {
+.header-search {
+	display: flex;
+	gap: 30px;
+	place-content: center;
+	place-items: center;
+	padding: 15px;
+}
+
+.header-search input {
+	width: 100%;
+}
+
+.header-user-block {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	place-content: center;
+	place-items: center;
+}
+
+.header-user-bell {
+	justify-self: flex-end;
+}
+
+.header-user-sub-block {
+	display: flex;
+	gap: 15px;
+	place-content: center;
+	place-items: center;
+}
+
+.header-user-avatar {
+	border-radius: 50%;
+	width: 48px;
+}
+
+.header-user-name {
+	color: #000000;
+	font-weight: bold;
+}
+
+.header-user-name:link {
+	text-decoration: none;
+}
+
+.header-user-name:hover,
+.header-user-name:focus {
+	text-decoration: underline;
+	text-decoration-skip-ink: auto;
+}
+
+.header-greetings {
+	display: grid;
+	gap: 30px;
+	grid-template-columns: auto 1fr;
+}
+
+.header-greetings-user-avatar {
+	border-radius: 50%;
+	width: 80px;
+}
+
+.header-greetings-user {
+	display: flex;
+	flex-direction: column;
+	place-content: center;
+	row-gap: 5px;
+}
+
+.header-greetings-text {
+	font-weight: 500;
+}
+
+.header-greetings-user-name {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.header-buttons {
+	display: flex;
+	flex-direction: row;
+	gap: 30px;
+	place-content: center;
+	place-items: center;
+}
+
+/* ---------------------------------------------------------- SIDEBAR */
+
+.sidebar {
+	background-color: var(--sidebar-bg-color);
 	grid-column: 1 / 2;
 	grid-row: 1 / -1;
 }
 
-.grid-main {
+/* ----------------------------------------------------- MAIN CONTENT */
+
+.main {
+	background-color: var(--main-bg-color);
+	background-image: linear-gradient(180deg, rgba(0,0,0,0.035) 0%, rgba(0,0,0,0) 5%, rgba(0,0,0,0) 100%);
 	display: grid;
 	grid-template-rows: repeat(2, 1fr);
 	grid-template-columns: 3fr 1fr;
 }
 
-.grid-projects {
+.main-projects {
+	display: grid;
+	gap: 15px;
+	grid-template-columns: repeat(2, 1fr);
 	grid-column: 1 / 2;
 	grid-row: 1 / -1;
 }
 
-/* ----------------------------------------------------------- HEADER */
+.main-announcements {
+
+}
