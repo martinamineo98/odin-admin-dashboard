@@ -197,8 +197,63 @@ button[type='submit']:focus {
 
 .sidebar {
 	background-color: var(--sidebar-bg-color);
+	color: #FFFFFF;
+	display: flex;
+	flex-direction: column;
+	gap: 60px;
 	grid-column: 1 / 2;
 	grid-row: 1 / -1;
+	padding: 30px;
+}
+
+.sidebar-heading {
+	display: flex;
+	flex-direction: row;
+	gap: 30px;
+	place-content: flex-start;
+	place-items: center;
+}
+
+.sidebar-heading-logo {
+	filter: invert();
+	width: 64px;
+}
+
+.sidebar-menu {
+	display: flex;
+	flex-direction: column;
+	gap: 60px;
+}
+
+.sidebar-menu ul {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	list-style: none;
+}
+
+.sidebar-menu a {
+	color: #FFFFFF;
+	display: flex;
+	flex-direction: row;
+	font-weight: 500;
+	gap: 30px;
+	letter-spacing: .125ch;
+	place-items: center;
+}
+
+.sidebar-menu a:link {
+	text-decoration: none;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu a:focus {
+	text-decoration: underline;
+	text-decoration-skip-ink: auto;
+}
+
+.sidebar-menu img {
+	filter: invert();
 }
 
 /* ----------------------------------------------------- MAIN CONTENT */
@@ -209,6 +264,7 @@ button[type='submit']:focus {
 	display: grid;
 	grid-template-rows: repeat(2, 1fr);
 	grid-template-columns: 3fr 1fr;
+	overflow-y: auto;
 }
 
 .main-projects {
